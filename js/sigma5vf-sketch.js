@@ -29,6 +29,7 @@ g.edges.push({"id":0,"source":"base5:old-Food-Growing-Methods.ttl","target":"\"F
 */
 
 // Instantiate sigma:
+/*
 s = new sigma({
   graph: g,
   renderer: {
@@ -50,6 +51,45 @@ s = new sigma({
     edgeHoverExtremities: true
   }
 });
+*/
+
+s = new sigma({
+  graph: g,
+  renderer: {
+    container: document.getElementById('graph-container'),
+    type: 'canvas'
+  },
+  settings: {
+    doubleClickEnabled: false,
+    minEdgeSize: 0.5,
+    maxEdgeSize: 4,
+    enableEdgeHovering: true,
+    edgeHoverColor: 'edge',
+    defaultEdgeHoverColor: '#f60',
+    edgeHoverSizeRatio: 1,
+    edgeHoverExtremities: true,
+  }
+});
+
+// Bind the events:
+s.bind('overNode outNode clickNode doubleClickNode rightClickNode', function(e) {
+  console.log(e.type, e.data.node.label, e.data.captor);
+});
+s.bind('overEdge outEdge clickEdge doubleClickEdge rightClickEdge', function(e) {
+  console.log(e.type, e.data.edge, e.data.captor);
+});
+s.bind('clickStage', function(e) {
+  console.log(e.type, e.data.captor);
+});
+s.bind('doubleClickStage rightClickStage', function(e) {
+  console.log(e.type, e.data.captor);
+});
+// ------ start of gist modification
+// bind an additional alert for clicking on the node
+s.bind('clickNode', function(e) {
+  alert('very bad idea');
+});
+// ------ end of gist modifcation
 
 
 // Configure the noverlap layout:
