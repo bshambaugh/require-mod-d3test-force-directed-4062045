@@ -1,0 +1,5 @@
+(1) Use getfiles in this directory to build a config object for require.js
+    [Maybe I do not need to do this since I have sigma.require in build]
+(2) Use /cp3-bc-node-arc-d3/node-arc-d3/js/createprimitives.js
+(3) Modify /var/www/html/cp3-bc-node-arc-d3/node-arc-d3/js/d3sketch.js to contain 
+/var/www/html/sigma.js/br-examples/edge2-render-d-index-old-aug22.html

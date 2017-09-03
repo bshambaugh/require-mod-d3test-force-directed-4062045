@@ -4,10 +4,28 @@
    <meta charset="UTF-8">
    <link rel="stylesheet" type="text/css" href="css/theme.css">  
    <title>Introduction To RequireJS</title>
+  <style>
+    #graph-container {
+  max-width: 400px;
+  height: 400px;
+  margin: auto;
+}
+
+/*
+      top: 0.5;
+      bottom: 0.5;
+      left: 0.5;
+      right: 0.5;
+}
+*/
+    /*  position: absolute; */
+  </style>
 </head>
  <body>
+  <div class="box c" id="graph-container">
+<!--  </div> -->
      <script data-main="js/config" src="js/libraries/require.js"></script>
-    <script>alert('before require keyword');</script> 
+   <script>alert('before require keyword');</script> 
      <script>
      require(['config'], function() {
 //        require(['d3forcegraph'])
@@ -18,8 +36,13 @@
 //            require(['d3test2'])
 //            require(['d3test3'])
               require(['d3sketch'])
+//              require(['sigma-sketch'])
+//              require(['sigma2-sketch'])
+//              document.write('hody');
+//              require(['test-sigma'])
  });
      </script>
+</div>
  </body>
 </html>
 
